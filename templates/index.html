@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style media="screen">
+  p{
+    align-content: left;
+  }
+</style>
+  <link rel="shortcut icon" href="https://img.icons8.com/ios-filled/50/000000/coal.png" />
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <title>Mine Disaster Prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="~/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link rel="stylesheet" media="all" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+  <nav class="white"role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo"> MINING EXPLOSION<img  class="lg" src="https://img.icons8.com/ios-filled/50/000000/coal.png" /></a>
+
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1  style="padding-top: -1em;">MINING EXPLOSION PREDICTION USING MACHINE LEARNING</h1>
+        <div class="row center">
+          <h3 class="header col s12 bold">Internship Project </h3>
+        </div>
+
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img class="first" src="/static/2256.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+
+
+
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>INFO</h4>
+          <h6 class="center light"> To predict the EXPLOSION and Disaster in the mines we can use this system live and concentrated.</h6>
+          <br>
+          <h6 class="center dark">INPUT Groups as follows</h6>
+          <p>0. seismic: result of shift seismic hazard assessment in the mine working obtained by the seismic method (a - lack of hazard, b - low hazard, c - high hazard, d - danger state);</p>
+
+<p>1. seismoacoustic: result of shift seismic hazard assessment in the mine working obtained by the seismoacoustic method;
+<br>
+2. shift: information about type of a shift (W - coal-getting, N -preparation shift);
+<br>
+3. genergy: seismic energy recorded within previous shift by the most active geophone (GMax) out of geophones monitoring the longwall;>
+<br>
+4. gpuls: a number of pulses recorded within previous shift by GMax;
+<br>
+5. gdenergy: a deviation of energy recorded within previous shift by GMax from average energy recorded during eight previous shifts;
+<br>
+6. gdpuls: a deviation of a number of pulses recorded within previous shift by GMax from average number of pulses recorded during eight previous shifts;
+<br>
+7. ghazard: result of shift seismic hazard assessment in the mine working obtained by the seismoacoustic method based on registration coming form GMax only;
+<br>
+8. nbumps: the number of seismic bumps recorded within previous shift;
+<br>
+9. nbumps2: the number of seismic bumps (in energy range [10^2,10^3)) registered within previous shift;
+<br>
+10. nbumps3: the number of seismic bumps (in energy range [10^3,10^4)) registered within previous shift;
+<br>
+11. nbumps4: the number of seismic bumps (in energy range [10^4,10^5)) registered within previous shift;
+<br>
+12. nbumps5: the number of seismic bumps (in energy range [10^5,10^6)) registered within the last shift;
+<br>
+13. nbumps6: the number of seismic bumps (in energy range [10^6,10^7)) registered within previous shift;
+<br>
+14. nbumps7: the number of seismic bumps (in energy range [10^7,10^8)) registered within previous shift;
+<br>
+15. nbumps89: the number of seismic bumps (in energy range [10^8,10^10)) registered within previous shift;
+<br>
+16. energy: total energy of seismic bumps registered within previous shift;
+<br>
+17. maxenergy: the maximum energy of the seismic bumps registered within previous shift;
+<br>
+18. class: the decision attribute - "1" means that high energy seismic bump occurred in the next shift ("hazardous state"), "0" means that no high energy seismic bumps occurred in the next shift ("non-hazardous state")
+</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper border">
+
+    <div class="section no-pad-bot">
+      <div class="container height ">
+        <div class="row center pos">
+          <h5 class="header col s12 he light" style="color:white ;">A modern responsive front-end framework based on Material Design</h5>
+
+
+          <div class="row">
+          <form class="col s12" action="http://localhost:6969/predict" id="worky" method="post" enctype="multipart/form-data">
+            <div class="row">
+
+              <div class="input-field col s4">
+                <select name="seismic">
+                  <option value="0" disabled selected>Choose your option</option>
+                  <option value="0">a - lack of hazard</option>
+                  <option value="1">b -high hazard</option>
+                </select>
+                <label>Seismic</label>
+              </div>
+
+            <div class="input-field col s4">
+              <select name="siesmo">
+                <option value="0" disabled selected>Choose your option</option>
+                <option value="0">a - lack of hazard</option>
+                <option value="1">b - low hazard</option>
+                <option value="2">c - high hazard</option>
+              </select>
+              <label>Seismoacoustic</label>
+            </div>
+
+              <div class="input-field col s4">
+                <select name="shift">
+                  <option value="0" disabled selected>Choose your option</option>
+                  <option value="0" id="w">W - coal-getting</option>
+                  <option value="1" id="n">N -preparation shif</option>
+                </select>
+                <label for="nunber">Shift</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number4" name="gnrg" type="number" class="validate">
+                <label for="number">Genergy</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number5" name="gplus" type="number" class="validate">
+                <label for="number">Gplus</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number6" name="gdnrg" type="number" class="validate">
+                <label for="number">Gdenergy</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number7" name="gdpluse" type="number" class="validate">
+                <label for="number">Gdplusr</label>
+              </div>
+
+              <div class="input-field col s4">
+                <select name="ghaz">
+                  <option value="0" disabled selected>Choose your option</option>
+                  <option value="0">a - lack of hazard</option>
+                  <option value="1">b - low hazard</option>
+                  <option value="2">c - high hazard</option>
+                </select>
+                <label for="number">Ghazard</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number9" type="number" name="nb" class="validate">
+                <label for="number">N_Bumps</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number10" name="nb2" type="number" class="validate">
+                <label for="number">N_Bumps - 2</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number11" name="nb3" type="number" class="validate">
+                <label for="number">N_Bumps - 3</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number12" name="nb4" type="number" class="validate">
+                <label for="number">N_Bumps - 4</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number13" name="nb5" type="number" class="validate">
+                <label for="number">N_Bumps - 5</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number14" name="nb6" type="number" class="validate">
+                <label for="number">N_Bumps - 6</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number15" name="nb7" type="number" class="validate">
+                <label for="number">N_Bumps - 7</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number16" name="nb89" type="number" class="validate">
+                <label for="number">N_Bumps - 89</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number17" name="eng" type="number" class="validate">
+                <label for="number">Energy</label>
+              </div>
+              <div class="input-field col s4">
+                <input id="number18" name="maxeng" type="number" class="validate">
+                <label for="number">Max - Energy</label>
+              </div>
+
+              </div>
+              <input type="submit" class="waves-effect waves-light btn" style="color: white;" value="Predict"/>
+            </form>
+
+
+            </div>
+            <br><br>
+          <b>{{ message }}</b>
+        </div>
+
+
+        </div>
+      </div>
+      <div class="parallax"><img class="first" src="/static/16279.jpg"></div>
+    </div>
+
+  </div>
+
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script  src="{{ url_for('static', filename='materialize.js')}}" data-turbolinks-track="reload"></script>
+<script  src="{{ url_for('static', filename='init.js')}}" data-turbolinks-track="reload"></script>
+  </body>
+</html>

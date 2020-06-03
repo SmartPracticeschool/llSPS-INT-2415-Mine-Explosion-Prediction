@@ -1,0 +1,111 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height:600px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+  padding-top: 8em;
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+.first{
+  width:100%;
+  
+}
+.header{
+  color:white;
+}
+h1{
+  color: white;
+  padding-top: -1em;
+  text-align: center;
+}
+h5{
+  color:black;
+
+}
+.pos{
+  position: relative;
+  top: -5em;
+}
+.row{
+  padding-top:2em;
+}
+.border{
+  
+  background-attachment: scroll;
+  height: 750px;
+}
+
+input{
+  color: white;
+  
+  
+}
+label{
+  color: white;
+}
+
+.col label{
+  color: white;
+}
+input{
+  scrollbar-arrow-color: black;
+}
+
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+.btn {
+  background-color: white;
+  color: black !important;
+  font-weight: bold;
+}
+
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
